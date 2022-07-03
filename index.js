@@ -16,12 +16,12 @@ const CONNECTION_URL = 'mongodb+srv://project1:project1@atlascluster.hyros.mongo
 
 app.get('/', (req, res) => {
     res.send('Welcome');
-});
+})
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 0.0
 
 mongoose.connect(CONNECTION_URL)
-.then(() => app.listen(PORT, () => console.log('Server running on port: ' + PORT)))
+.then(() => app.listen(PORT, () => console.log('Server running on port: ${PORT}'))) 
 .catch((error) => console.log(error.message));
 
 // mongoose.connect(CONNECTION_URL).then(()=>{console.log('Runin on : ' + PORT)});
